@@ -1,0 +1,6 @@
+#FileLock
+#Wed Jan 19 16:31:50 CET 2022
+server=192.168.56.1\:54238
+hostName=PC
+method=file
+id=17e72f72b20912ed845329727fbad2719b426728401
