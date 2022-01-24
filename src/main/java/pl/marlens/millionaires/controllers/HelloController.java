@@ -11,6 +11,6 @@ public class HelloController {
     public String hello (Model model) {
         model.addAttribute("message","some message");
 
-        return "hello";
+        return "index";
     }
 }
