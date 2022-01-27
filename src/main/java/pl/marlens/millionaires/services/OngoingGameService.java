@@ -24,19 +24,19 @@ public class OngoingGameService {
     @Autowired
     private QuizDataService quizDataService;
 
-    public void init (GameOptions gameOptions) {
+    public void init(GameOptions gameOptions) {
         this.gameOptions = gameOptions;
         this.currentQuestionIndex = 0;
         this.points = 0;
 
-        quizDataService.getQuizQuestions(gameOptions);
+        this.questions = quizDataService.getQuizQuestions(gameOptions);
     }
 
-    public int getCurrentQuestionIndex() {
+    public int getCurrentQuestionNumber() {
         return currentQuestionIndex+1;
     }
 
-    public int getTotalQuestionsNumber() {
+    public int getTotalQuestionNumber() {
         return questions.size();
     }
 
@@ -56,7 +56,7 @@ public class OngoingGameService {
         return answers;
     }
 
-    public boolean checkAnswerForCurrentQuestionAndUpdatePoints (String userAnswer) {
+    public boolean checkAnswerForCurrentQuestionAndUpdatePoints(String userAnswer) {
         QuestionsDto.QuestionDto dto = questions.get(currentQuestionIndex);
         boolean correct = dto.getCorrectAnswer().equals(userAnswer);
         if (correct) {
