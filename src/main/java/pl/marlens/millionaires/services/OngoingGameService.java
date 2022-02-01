@@ -37,7 +37,7 @@ public class OngoingGameService {
     }
 
     public int getCurrentQuestionNumber() {
-        return currentQuestionIndex+1;
+        return currentQuestionIndex + 1;
     }
 
     public int getTotalQuestionNumber() {

@@ -21,7 +21,7 @@ public class FrontendController {
     private OngoingGameService ongoingGameService;
 
     @GetMapping("/")
-    public String hello (Model model) {
+    public String hello(Model model) {
         return "index";
     }
 
@@ -33,7 +33,7 @@ public class FrontendController {
     }
 
     @PostMapping("/select")
-    public String postSelectForm (Model model, @ModelAttribute GameOptions gameOptions) {
+    public String postSelectForm(Model model, @ModelAttribute GameOptions gameOptions) {
         log.info("Form submitted with data: " + gameOptions);
         ongoingGameService.init(gameOptions);
         return "redirect:game";
@@ -61,7 +61,7 @@ public class FrontendController {
     }
 
     @GetMapping("/summary")
-    public String summary (Model model) {
+    public String summary(Model model) {
         model.addAttribute("difficulty", ongoingGameService.getDifficulty());
         model.addAttribute("categoryName", ongoingGameService.getCategoryName());
         model.addAttribute("points", ongoingGameService.getPoints());
